@@ -31,7 +31,7 @@
 
 // Use one of these or SDCard-based Emulation will be used
 //#define SRAM_EEPROM_EMULATION   // Use BackSRAM-based EEPROM emulation
-//#define FLASH_EEPROM_EMULATION  // Use Flash-based EEPROM emulation
+#define FLASH_EEPROM_EMULATION  // Use Flash-based EEPROM emulation
 
 //
 // Servos
@@ -77,6 +77,14 @@
 #define Z_ENABLE_PIN       PC0
 #ifndef Z_CS_PIN
   #define Z_CS_PIN         PB9
+#endif
+
+// Same as E1
+#define Z2_STEP_PIN        PD15
+#define Z2_DIR_PIN         PE7
+#define Z2_ENABLE_PIN      PA3
+#ifndef Z2_CS_PIN
+  #define Z2_CS_PIN        PG15
 #endif
 
 #define E0_STEP_PIN        PE14
@@ -174,7 +182,7 @@
 #define HEATER_1_PIN       PD14 // Heater1
 #define HEATER_2_PIN       PB0  // Heater1
 #define HEATER_BED_PIN     PD12 // Hotbed
-#define FAN_PIN            PC8  // Fan0
+#define FAN_PIN            PD14  // Fan0
 #define FAN1_PIN           PE5  // Fan1
 #define FAN2_PIN           PE6  // Fan2
 
