@@ -613,7 +613,7 @@
 
   // Safety: The probe needs time to recognize the command.
   //         Minimum command delay (ms). Enable and increase if needed.
-  #define BLTOUCH_DELAY 750
+  //#define BLTOUCH_DELAY 500
 
   /**
    * Settings for BLTOUCH Classic 1.2, 1.3 or BLTouch Smart 1.0, 2.0, 2.2, 3.0, 3.1, and most clones:
@@ -639,7 +639,7 @@
    * differs, a mode set eeprom write will be completed at initialization.
    * Use the option below to force an eeprom write to a V3.1 probe regardless.
    */
-  //#define BLTOUCH_SET_5V_MODE
+  #define BLTOUCH_SET_5V_MODE
 
   /**
    * Safety: Activate if connecting a probe with an unknown voltage mode.
@@ -647,7 +647,7 @@
    * V3.1: Force a probe with unknown mode into selected mode at Marlin startup ( = Probe EEPROM write )
    * To preserve the life of the probe, use this once then turn it off and re-flash.
    */
-  #define BLTOUCH_FORCE_MODE_SET
+  //#define BLTOUCH_FORCE_MODE_SET
 
   /**
    * Use "HIGH SPEED" mode for probing.
@@ -658,7 +658,7 @@
   //#define BLTOUCH_HS_MODE
 
   // Safety: Enable voltage mode settings in the LCD menu.
-  #define BLTOUCH_LCD_VOLTAGE_MENU
+  //#define BLTOUCH_LCD_VOLTAGE_MENU
 
 #endif // BLTOUCH
 
@@ -743,7 +743,7 @@
 #define DEFAULT_MINIMUMFEEDRATE       0.0     // minimum feedrate
 #define DEFAULT_MINTRAVELFEEDRATE     0.0
 
-#define HOME_AFTER_DEACTIVATE  // Require rehoming after steppers are deactivated
+//#define HOME_AFTER_DEACTIVATE  // Require rehoming after steppers are deactivated
 
 // Minimum time that a segment needs to take if the buffer is emptied
 #define DEFAULT_MINSEGMENTTIME        20000   // (ms)
@@ -2023,7 +2023,7 @@
   #if AXIS_IS_TMC(X)
     #define X_CURRENT       1100        // (mA) RMS current. Multiply by 1.414 for peak current.
     #define X_CURRENT_HOME  X_CURRENT  // (mA) RMS current for sensorless homing
-    #define X_MICROSTEPS     256    // 0..256
+    #define X_MICROSTEPS     64    // 0..256
     #define X_RSENSE          0.11
     #define X_CHAIN_POS      -1    // <=0 : Not chained. 1 : MCU MOSI connected. 2 : Next in chain, ...
   #endif
@@ -2039,7 +2039,7 @@
   #if AXIS_IS_TMC(Y)
     #define Y_CURRENT       1100
     #define Y_CURRENT_HOME  Y_CURRENT
-    #define Y_MICROSTEPS     256
+    #define Y_MICROSTEPS     64
     #define Y_RSENSE          0.11
     #define Y_CHAIN_POS      -1
   #endif
@@ -2055,7 +2055,7 @@
   #if AXIS_IS_TMC(Z)
     #define Z_CURRENT       1000
     #define Z_CURRENT_HOME  Z_CURRENT
-    #define Z_MICROSTEPS     256
+    #define Z_MICROSTEPS     64
     #define Z_RSENSE          0.11
     #define Z_CHAIN_POS      -1
   #endif
@@ -2063,7 +2063,7 @@
   #if AXIS_IS_TMC(Z2)
     #define Z2_CURRENT      1000
     #define Z2_CURRENT_HOME Z2_CURRENT
-    #define Z2_MICROSTEPS    256
+    #define Z2_MICROSTEPS    64
     #define Z2_RSENSE         0.11
     #define Z2_CHAIN_POS     -1
   #endif
@@ -2086,7 +2086,7 @@
 
   #if AXIS_IS_TMC(E0)
     #define E0_CURRENT      300
-    #define E0_MICROSTEPS    256
+    #define E0_MICROSTEPS    128
     #define E0_RSENSE         0.11
     #define E0_CHAIN_POS     -1
   #endif
@@ -2324,7 +2324,7 @@
    * Beta feature!
    * Create a 50/50 square wave step pulse optimal for stepper drivers.
    */
-  #define SQUARE_WAVE_STEPPING
+  //#define SQUARE_WAVE_STEPPING
 
   /**
    * Enable M122 debugging command for TMC stepper drivers.
